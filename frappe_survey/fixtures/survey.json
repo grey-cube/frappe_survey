@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Survey",
+  "modified": "2023-10-01 07:24:07.380642",
+  "name": "Webinar Feedback",
+  "questions": [],
+  "sub_title": "Please give use your feedback.",
+  "survey_json": "{\n  \"title\": \"Cancellation Survey\",\n  \"description\":  \"Thank you for using our service. We would highly appreciate if you would take the time to fill our cancellation survey. This would help us improve the service.\",\n \"pages\": [\n  {\n   \"name\": \"page1\",\n   \"elements\": [\n    {\n     \"type\": \"radiogroup\",\n     \"name\": \"using_duration\",\n     \"title\": \"How long have you been using the service?\",\n     \"choices\": [\n      \"Less than a month\",\n      \"1-6 months\",\n      \"7-12 months\",\n      \"1-3 years\",\n      \"Over 3 years\"\n     ]\n    },\n    {\n     \"type\": \"radiogroup\",\n     \"name\": \"using_frequency\",\n     \"title\": \"How often did you use the service?\",\n     \"choices\": [\n      \"Once a week\",\n      \"2 or 3 times a month\",\n      \"Once a month\",\n      \"Less than once a month\"\n     ]\n    },\n    {\n     \"type\": \"radiogroup\",\n     \"name\": \"cancel_reason\",\n     \"title\": \"What was the main reason for cancelling the service?\",\n     \"showOtherItem\": true,\n     \"choices\": [\n      \"No longer need it\",\n      \"It didn't meet my needs\",\n      \"Found a better alternative\",\n      \"Found a cheaper alternative\",\n      \"Quality was less than expected\",\n      \"Ease of use was less than expected\",\n      \"Access to the service was less than expected\",\n      \"Customer service was less than expected\"\n     ]\n    },\n    {\n     \"type\": \"radiogroup\",\n     \"name\": \"satisfaction\",\n     \"title\": \"Overall, how satisfied were you with the service?\",\n     \"choices\": [\n      \"Very Satisfied\",\n      \"Satisfied\",\n      \"Neutral\",\n      \"Unsatisfied\",\n      \"Very Unsatisfied\"\n     ]\n    },\n    {\n     \"type\": \"matrix\",\n     \"name\": \"future_using\",\n     \"titleLocation\": \"hidden\",\n     \"columns\": [\n      \"Definitely\",\n      \"Probably\",\n      \"Not Sure\",\n      \"Probably Not\",\n      \"Definitely Not\"\n     ],\n     \"rows\": [\n      {\n       \"value\": \"use_in_future\",\n       \"text\": \"Will you use our service in the future?\"\n      },\n      {\n       \"value\": \"recommend\",\n       \"text\": \"Will you recommend our service to others?\"\n      }\n     ]\n    },\n    {\n      \"type\": \"comment\",\n      \"name\": \"service_improvements\",\n      \"title\": \"How can we improve our service?\",\n      \"maxLength\": 500\n    }\n   ]\n  }\n ],\n \"showQuestionNumbers\": \"off\"\n}",
+  "theme_json": null,
+  "title": "Webinar Feedback"
+ }
+]

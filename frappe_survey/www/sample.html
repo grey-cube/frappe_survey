@@ -1,0 +1,27 @@
+{% extends "templates/web.html" %}
+<!--  -->
+{% set title = heading or "Enter your carrier details" %}
+
+<!--  -->
+{% block header %} {% endblock %}
+<!--  -->
+{% block page_content %}
+
+<div id="surveyElement"></div>
+
+<script type="text/javascript">
+  frappe.ready(() => {
+    console.log("loaded");
+    frappe.require(["/assets/frappe_survey/js/survey.jquery.min.js"], () => {
+      const survey = new Survey.Model(frappe.questionnaire);
+      // You can delete the line below if you do not use a customized theme
+      survey.applyTheme(frappe.theme_json);
+      survey.onComplete.add((sender, options) => {
+        console.log(JSON.stringify(sender.data, null, 3));
+      });
+      $("#surveyElement").Survey({ model: survey });
+    });
+  });
+</script>
+<!--     -->
+{% endblock %}

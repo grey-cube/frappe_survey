@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "autoname": "prompt",
+ "creation": "2023-09-30 23:09:10.334827",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "title",
+  "response"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Data",
+   "label": "Response"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-30 23:25:46.729934",
+ "modified_by": "Administrator",
+ "module": "Frappe Survey",
+ "name": "Survey Question",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

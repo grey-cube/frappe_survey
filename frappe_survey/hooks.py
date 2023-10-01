@@ -2,8 +2,8 @@ from . import __version__ as app_version
 
 app_name = "frappe_survey"
 app_title = "Frappe Survey"
-app_publisher = "Greycube"
-app_description = "SurveyJS with frappe"
+app_publisher = "Greycube Technologies"
+app_description = "Build Web Forms with SurveyJS."
 app_email = "admin@greycube.in"
 app_license = "MIT"
 
@@ -15,8 +15,11 @@ app_license = "MIT"
 # app_include_js = "/assets/frappe_survey/js/frappe_survey.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/frappe_survey/css/frappe_survey.css"
-# web_include_js = "/assets/frappe_survey/js/frappe_survey.js"
+web_include_css = "/assets/frappe_survey/css/survey.min.css"
+web_include_js = [
+    "/assets/frappe_survey/js/survey.jquery.min.js",
+    "/assets/frappe_survey/js/survey_web_form.js",
+]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "frappe_survey/public/scss/website"
@@ -42,7 +45,7 @@ app_license = "MIT"
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
 
 # Generators
@@ -56,8 +59,8 @@ app_license = "MIT"
 
 # add methods and filters to jinja environment
 # jinja = {
-#	"methods": "frappe_survey.utils.jinja_methods",
-#	"filters": "frappe_survey.utils.jinja_filters"
+# 	"methods": "frappe_survey.utils.jinja_methods",
+# 	"filters": "frappe_survey.utils.jinja_filters"
 # }
 
 # Installation
@@ -83,11 +86,11 @@ app_license = "MIT"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
 # }
 #
 # has_permission = {
-#	"Event": "frappe.desk.doctype.event.event.has_permission",
+# 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
 # DocType Class
@@ -95,7 +98,7 @@ app_license = "MIT"
 # Override standard doctype classes
 
 # override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
+# 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
 # Document Events
@@ -103,32 +106,32 @@ app_license = "MIT"
 # Hook on document methods and events
 
 # doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
+# 	"*": {
+# 		"on_update": "method",
+# 		"on_cancel": "method",
+# 		"on_trash": "method"
+# 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
 # scheduler_events = {
-#	"all": [
-#		"frappe_survey.tasks.all"
-#	],
-#	"daily": [
-#		"frappe_survey.tasks.daily"
-#	],
-#	"hourly": [
-#		"frappe_survey.tasks.hourly"
-#	],
-#	"weekly": [
-#		"frappe_survey.tasks.weekly"
-#	],
-#	"monthly": [
-#		"frappe_survey.tasks.monthly"
-#	],
+# 	"all": [
+# 		"frappe_survey.tasks.all"
+# 	],
+# 	"daily": [
+# 		"frappe_survey.tasks.daily"
+# 	],
+# 	"hourly": [
+# 		"frappe_survey.tasks.hourly"
+# 	],
+# 	"weekly": [
+# 		"frappe_survey.tasks.weekly"
+# 	],
+# 	"monthly": [
+# 		"frappe_survey.tasks.monthly"
+# 	],
 # }
 
 # Testing
@@ -140,14 +143,14 @@ app_license = "MIT"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "frappe_survey.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "frappe_survey.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-#	"Task": "frappe_survey.task.get_dashboard_data"
+# 	"Task": "frappe_survey.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -173,29 +176,40 @@ app_license = "MIT"
 # --------------------
 
 # user_data_fields = [
-#	{
-#		"doctype": "{doctype_1}",
-#		"filter_by": "{filter_by}",
-#		"redact_fields": ["{field_1}", "{field_2}"],
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_2}",
-#		"filter_by": "{filter_by}",
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_3}",
-#		"strict": False,
-#	},
-#	{
-#		"doctype": "{doctype_4}"
-#	}
+# 	{
+# 		"doctype": "{doctype_1}",
+# 		"filter_by": "{filter_by}",
+# 		"redact_fields": ["{field_1}", "{field_2}"],
+# 		"partial": 1,
+# 	},
+# 	{
+# 		"doctype": "{doctype_2}",
+# 		"filter_by": "{filter_by}",
+# 		"partial": 1,
+# 	},
+# 	{
+# 		"doctype": "{doctype_3}",
+# 		"strict": False,
+# 	},
+# 	{
+# 		"doctype": "{doctype_4}"
+# 	}
 # ]
 
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
-#	"frappe_survey.auth.validate"
+# 	"frappe_survey.auth.validate"
 # ]
+
+fixtures = [
+    {
+        "dt": "Web Form",
+        "filters": [["name", "in", ["webinar-feedback"]]],
+    },
+    {
+        "dt": "Survey",
+        "filters": [["name", "in", ["Webinar Feedback"]]],
+    },
+]
